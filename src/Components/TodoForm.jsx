@@ -26,7 +26,7 @@ function TodoForm(props) {
 	};
 
 	return (
-		<form className='' onSubmit={handleSubmit}>
+		<form onSubmit={handleSubmit}>
 			{props.edit ? 
 			(<>
 			<div className='d-flex justify-content-center pb-5'>
