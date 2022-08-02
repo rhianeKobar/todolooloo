@@ -2,12 +2,14 @@ import React, {useState} from 'react'
 import TodoForm from './TodoForm'
 import {RiCloseCircleLine} from 'react-icons/ri'
 import {TiEdit} from 'react-icons/ti'
+import './../todo.css';
 
 function Todo({todos, completeTodo, removeTodo, updateTodo}) {
 
 	const [edit, setEdit] = useState({
 		id: null,
-		value: ''
+		value: '',
+		isComplete: false
 	})
 
 	const submitUpdate = value => {
@@ -31,7 +33,7 @@ function Todo({todos, completeTodo, removeTodo, updateTodo}) {
 				<div
 					key={todo.id}
 					onClick={() => completeTodo(todo.id)}
-					className='text-primary col-md-10'
+					className={todo.isComplete ? 'text-primary col-md-10 del':'text-primary col-md-10'}
 				>
 					{todo.text}
 				</div>

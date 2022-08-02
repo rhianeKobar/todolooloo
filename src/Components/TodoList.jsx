@@ -14,6 +14,11 @@ function TodoList() {
 		}
 	},[])
 
+	const setAndStore = (updatedArr) => {
+		setTodos(updatedArr);
+		storeLocally(updatedArr);
+	}
+
 	const storeLocally = (todos) => {
 		localStorage.setItem("all-my-todos", JSON.stringify(todos));
 	}
@@ -24,8 +29,7 @@ function TodoList() {
 		}
 		const newTodos = [todo, ...todos]
 
-		setTodos(newTodos);
-		storeLocally(newTodos);
+		setAndStore(newTodos);
 	};
 
 	const updateTodo = (todoId,newValue) => {
@@ -34,15 +38,13 @@ function TodoList() {
 		}
 
 		const updatedTodos = todos.map(item =>(item.id === todoId ? newValue : item))
-		setTodos(updatedTodos)
-		storeLocally(updatedTodos)
+		setAndStore(updatedTodos)
 
 	}
 
 	const removeTodo = id => {
 		const removeArr = [...todos].filter(todo => todo.id !== id)
-		setTodos(removeArr);
-		storeLocally(removeArr)
+		setAndStore(removeArr)
 	}
 
 	const completeTodo = id => {
@@ -52,7 +54,7 @@ function TodoList() {
 			}
 			return todo
 		});
-		setTodos(updatedTodos);
+		setAndStore(updatedTodos)
 	};
 
 
