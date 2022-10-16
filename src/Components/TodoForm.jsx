@@ -29,50 +29,54 @@ function TodoForm(props) {
 	return (
 		<form onSubmit={handleSubmit}>
 			{props.edit ? 
-			(<>
-			<div className='d-flex justify-content-center pb-5'>
-				<div className='input-group w-50'>
-					<input 
-						type="text" 
-						placeholder='Update your task' 
-						value={input}
-						name="text"
-						onChange={handleChange}
-						ref={inputRef}
-						className='form-control'
-					/>
-					<div className='btn btn-primary'>
-							<BsPlusCircleFill 
-							onClick={handleSubmit} 
-							color='#000'
-							fontSize="1.2em"
+			(
+				<>
+					<div className='d-flex justify-content-center pb-5'>
+						<div className='input-group w-50'>
+							<input 
+								type="text" 
+								placeholder='Update your task' 
+								value={input}
+								name="text"
+								onChange={handleChange}
+								ref={inputRef}
+								className='form-control'
 							/>
+							<div className='btn btn-primary'>
+									<BsPlusCircleFill 
+									onClick={handleSubmit} 
+									color='#000'
+									fontSize="1.2em"
+									/>
+							</div>
+						</div>
+					</div>
+				</>
+			) : 
+			(
+				<>
+				<div className='d-flex justify-content-center pb-3'>
+					<div className='input-group w-50'>
+						<input 
+							type="text" 
+							placeholder='Add a task' 
+							value={input}
+							name="text"
+							onChange={handleChange}
+							ref={inputRef}
+							className='form-control'
+						/>
+						<div className='btn btn-primary'>
+								<BsPlusCircleFill 
+								onClick={handleSubmit} 
+								color='#000'
+								fontSize="1.2em"
+								/>
+						</div>
 					</div>
 				</div>
-			</div>
-			</>) : 
-			(<>
-			<div className='d-flex justify-content-center pb-3'>
-				<div className='input-group w-50'>
-					<input 
-						type="text" 
-						placeholder='Add a task' 
-						value={input}
-						name="text"
-						onChange={handleChange}
-						ref={inputRef}
-						className='form-control'
-					/>
-					<div className='btn btn-primary'>
-							<BsPlusCircleFill 
-							onClick={handleSubmit} 
-							color='#000'
-							fontSize="1.2em"
-							/>
-					</div>
-				</div>
-			</div>
-			</>)
+				</>
+				)
 			}
 			
 			

@@ -60,7 +60,7 @@ function TodoList() {
 
 	return (
 		<div className='bg-secondary w-50 p-3 container rounded h-75 d-flex flex-column'>
-			<h1 className='text-primary text-center'>Todolooloo</h1>
+			<h1 className='text-primary text-center w-100'>Todolooloo</h1>
 			<TodoForm onSubmit={addTodo}/>
 			<Todo 
 				todos={todos} 
